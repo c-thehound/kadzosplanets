@@ -1,1 +1,1 @@
-web: gunicorn kadzosplanets.wsgi
+web: gunicorn kadzo_elite.wsgi

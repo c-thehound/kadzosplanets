@@ -1,0 +1,259 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static "css/semantic-ui/semantic.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/animate/animate.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/homepage.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/iconfonts/flaticon.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Courgette|Neucha" rel="stylesheet">
+    <title>Kadzos planets</title>
+</head>
+<body id="home">
+    <div class="ui inverted masthead centered segment reduced">
+      <div class="head">
+          <a class="logo item" href="/">
+            <img src="{{logo.image.url}}" class="logo asyncImage" data-src="images/logo.png" alt="Logo">
+          </a>
+          {% ifequal active 'landing'%}
+          <i class="ui icon bars"></i>
+          {% endifequal %}
+      </div>
+      <div class="collapsible">
+        <ul>
+              <li><a class="item" href="#stories">
+                  <i class="flaticon-fairy-tale"></i> Stories
+                </a></li>
+                <li><a class="item" href="#shop">
+                  <i class="flaticon-shopping-bag"></i> Shop
+                </a></li>
+                <li>
+                <a class="item" href="#gallery">
+                  <i class="flaticon-attach"></i> Gallery
+                </a>
+                </li>
+                <li>
+                <a class="item" href="#team">
+                  <i class="flaticon-team"></i> Our team
+                </a>
+                </li>
+                <li>
+                <a class="item" href="/blog">
+                  <i class="flaticon-blogging"></i> Blog
+                </a>
+                </li>
+                <li>
+                <a class="item" href="#contact">
+                  <i class="flaticon-contact"></i> Contact us
+                </a>
+                </li>
+        </ul>
+      </div>
+    </div>
+    <div class="ui inverted masthead centered segment normal">
+        <div class="ui secondary pointing menu fixed">
+            {% ifequal active 'landing' %}
+            <a class="logo item" href="/">
+                <img src="{{logo.image.url}}" class="logo asyncImage" data-src="images/logo.png" alt="Logo">
+            </a>
+            <a class="item" href="#stories">
+              <i class="flaticon-fairy-tale"></i> Stories
+            </a>
+            <a class="item" href="#shop">
+              <i class="flaticon-shopping-bag"></i> Shop
+            </a>
+            <a class="item" href="#gallery">
+              <i class="flaticon-attach"></i> Gallery
+            </a>
+            <a class="item" href="#team">
+              <i class="flaticon-team"></i> Our team
+            </a>
+            <a class="item" href="/blog">
+              <i class="flaticon-blogging"></i> Blog
+            </a>
+            <a class="item" href="#contact">
+              <i class="flaticon-contact"></i> Contact us
+            </a>
+            {% else %}
+            <a class="item" href="/">
+                <i class="ui home icon"></i> Home
+            </a>
+            {% endifequal %}
+          </div>
+        <div class="ui page grid">
+          <div class="column">           
+            <div class="ui hidden transition information">
+              {% ifequal active 'landing'  %}
+              <div class="kadzoandbwana">
+                
+                </div>
+                <h1 class="ui inverted centered header">
+                  {{theme.text}}
+                </h1>
+                <p class="ui centered lead">
+                  {{theme.message}}
+                </p>
+                <a href="#" class="large basic inverted animated fade ui button">
+                  <div class="visible content">Welcome to you home of adventure</div>
+                  <div class="hidden content">Go to stories</div>
+                </a>
+                <h2 class="ui header" style="color:aliceblue;">
+                    {{tagline.text}}
+                </h2>
+                <a href="#" class="large basic inverted animated fade ui button">
+                    <div class="visible content">Offering the best of the best products and services </div>
+                    <div class="hidden content">Go to shop</div>
+                </a>    
+                {% else %}            
+                <h1 class="ui header intro" style="color:#fff;">
+                  An intro to our blog section
+                </h1>
+              {% endifequal %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {%block landing%}{%endblock%}
+      {%block blog%}{%endblock%}
+      {%block footer%}
+      <div class="ui inverted footer vertical segment center">
+        <div class="ui stackable center aligned page grid">
+          <div class="four column row">
+              <div class="column">
+                <h5 class="ui inverted header">Address</h5>
+                <div class="ui inverted link list">
+                  <a class="item">Phone : 0727280703</a>
+                  <a class="item">P.O Box 774-00200</a>
+                  <a class="item">City Square, Nairobi</a>
+                  <a class="item">Kadzosplanets@gmail.com</a>
+                </div>
+              </div>
+              <div class="column">
+                <h5 class="ui inverted header">Navigation</h5>
+                <div class="ui inverted link list">
+                  <a class="item">Back to top</a>
+                  <a class="item">Stories</a>
+                  <a class="item">Shop</a>
+                  <a class="item">Gallery</a>
+                  <a class="item">Our team</a>
+                  <a class="item">Blog</a>
+                </div>
+              </div>
+              <div class="column">
+                <h5 class="ui inverted header">Community</h5>
+                <div class="ui inverted link list">
+                  <a class="item">
+                    <i class="ui instagram icon"></i>
+                    Instagram</a>
+                  <a class="item">
+                    <i class="ui twitter icon"></i>
+                    Twitter</a>
+                  <a class="item">
+                    <i class="ui facebook icon"></i>
+                    Facebook</a>
+                </div>
+              </div>
+            
+          <div class="column">
+            <h5 class="ui inverted header">Designed By</h5>
+            <div class="ui inverted link list">
+              <a class="item" href="http://scripteden.com">Castin Masikah</a>  <br/>         
+              <p>Phone : 0745820775</p>
+              <p>browncastin@gmail.com</p>
+              Font generated by <a href="https://www.flaticon.com">flaticon.com</a>. <p>Under <a href="http://creativecommons.org/licenses/by/3.0/">CC</a>: <a data-file="004-fairy-tale" href="http://www.freepik.com">Freepik</a>, <a data-file="003-shopping-bag" href="https://www.flaticon.com/authors/darius-dan">Darius Dan</a>, <a data-file="005-blogging" href="https://www.flaticon.com/authors/itim2101">itim2101</a>, <a data-file="006-contact" href="https://www.flaticon.com/authors/smashicons">Smashicons</a></p>  
+                   
+            </div>
+          </div>
+        </div>
+          
+          
+        
+      </div>
+      </div>
+      {%endblock%}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+      <script src="{% static "css/semantic-ui/semantic.js" %}"></script>
+      <script src="{% static "js/homepage.js" %}"></script>
+      <script>
+          //  Initialise wowjs animations
+    new WOW().init()
+    $(function(){
+        $('.ui.card').popup();
+    });
+    (() => {
+      'use strict';
+      // Page is loaded
+      const objects = document.getElementsByClassName('asyncImage');
+
+      Array.from(objects).map((item) => {
+        // Start loading image
+        const img = new Image();
+        img.src = item.dataset.src;
+        // Once image is loaded replace the src of the HTML element
+        img.onLoad = () =>{
+          item.classList.remove('asyncImage');
+          return item.nodeName === 'IMG' ?
+          item.src = item.dataset.src :
+          item.style.backgroundImage = `url(${item.dataset.src})`;
+        };
+      });
+    })();
+
+    // Add background color on scroll to header
+    $(window).scroll(function(){
+      if($(window).scrollTop() >= 60){
+        $('.ui.menu.fixed').addClass('scrolled')
+      }else{
+        $('.ui.menu.fixed').removeClass('scrolled')
+      }
+    })
+
+    // Handle toggling of the menu on small screens
+    $('i.icon.bars').on('click',function(){
+      $('.collapsible').toggleClass('open')
+    })
+
+    // Handle on story click
+    $('.storycard').on('click',function(e){
+      console.log(e.target.classList[0])
+      var convertor = new showdown.Converter()
+      var target = e.target.classList[0]
+
+      fetch("stories/story/"+target)
+      .then(res => res.json())
+      .then(response => {
+        var text = response.story_content
+        var title = response.title
+        var html = convertor.makeHtml(text)
+        console.log(html)
+        $('.storytitle').text(title)
+        $('.storycontent').html(html)
+      })
+      
+      $('.ui.basic.modal').modal('show');
+    })
+
+    // Handle blog post click
+    $('.blogpost').on('click',function(e){
+      var convertor = new showdown.Converter()
+      var target = e.target.classList[0]
+
+      fetch("post/"+target)
+      .then(res => res.json())
+      .then(response => {
+        var text = response.content
+        var title = response.title
+        var html = convertor.makeHtml(text)
+        $('.storytitle').text(title)
+        $('.storycontent').html(html)
+      })
+      $('.ui.basic.modal').modal('show');
+    })
+      </script>
+</body>
+</html>

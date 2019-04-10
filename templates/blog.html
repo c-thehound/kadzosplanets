@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block blog%}
+<div class="ui segment blogposts">
+    <div class="ui grid stackable centered">
+        <div class="row" style="margin-top:80px;">
+            {% for post in blogposts%}
+            <div class="ui four wide column">
+                <div class="{{post.id}} ui card link blogpost" style="min-width:100% !important;">
+                    <div class="{{post.id}} content">
+                        {{post.title}}
+                    </div>
+                    <div class="{{post.id}} content blogtext">
+                        {{post.snippet}}
+                    </div>
+                    <div class="{{post.id}} content extra">
+                        {{post.uploaded}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Post modal -->
+    <div class="ui basic modal" style="top:0;">
+            <div class="ui icon header storytitle">
+              
+            </div>
+            <div class="content storycontent">
+              
+            </div>
+            <div class="actions">
+              <div class="ui red cancel button">
+                Close
+              </div>
+            </div>
+    </div>
+</div>
+{%endblock%}

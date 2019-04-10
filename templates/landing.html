@@ -1,0 +1,144 @@
+{% extends 'base.html'%}
+{%load static%}
+{%block landing%}
+<div class="ui vertical feature segment">
+
+  <!-- Stories -->
+    <div class="ui four column stackable centered page grid" id="stories">
+      <div class="row">
+        {% for story in stories %}
+        <div class="column">
+        <div class="{{story.pk}} ui card storycard link">
+          <div class="{{story.pk}} content" style="color:blueviolet;">
+            {{story.title}}
+          </div>
+          <div class="{{story.pk}} extra content">
+            {{story.id}}
+          </div>
+        </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <!-- Story modal -->
+    <div class="ui basic modal" style="top:0;">
+        <div class="ui icon header storytitle">
+          
+        </div>
+        <div class="content storycontent">
+          
+        </div>
+        <div class="actions">
+          <div class="ui red cancel button">
+            Close
+          </div>
+        </div>
+      </div>
+
+    <!-- Subscribe to our mailing list -->
+       <div class="ui centered page grid" id="contact" style="text-align:center;">
+              <p><h3 class="subscribe-header">Subscribe to our Mailing List</h3></p>
+              <p class="ui centered lead large">Don't miss a out on anything</p><br><br>
+              <div class="ui form twelve wide subscribe column">
+              <div class="field">
+              <div class="ui fluid action input">
+                <form action="/mail/subscribe/" method="POST" style="text-align: center;">
+                  {%csrf_token%}
+              <input style="min-width:300px;margin-bottom:10px;" placeholder="Susbcribe..." name="email" type="email">
+              <button type="submit" class="ui primary button" style="margin:auto;">Subscribe</button>
+              </form>
+          </div>
+      </div>
+      </div>
+    </div>       
+</div>
+    
+  
+  <!-- Shop -->
+  <div class="ui recent-works vertical segment" id="shop">
+    <div class="ui very relaxed stackable centered page grid">
+      <div class="row">
+        <div class="eight wide centered column">
+          <h1 class="center aligned ui header">
+            Shop
+          </h1>
+            <div class="ui horizontal divider"><i class="white flaticon-camera icon"></i></div>
+            <p class="ui centered lead" style="color:blueviolet;">All eyes on you.</p>
+        </div>
+      </div>
+      <div class="fourteen wide column">
+      <div class="ui three column aligned stackable divided grid">
+        {%for product in shop%}
+        <div class="column">
+          <div class="ui card shopitem">
+            <div class="content">
+              <img class="ui image" src="{{product.image.url}}"/>
+            </div>
+            <div class="ui content">
+              <p>
+                {{product.description}}<br>
+                <hr>
+                <span>
+                  Kshs. {{product.price}}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <div class="ui segment gallery" id="gallery">
+    <div class="ui stackable center aligned page grid">
+        <div class="row">
+            <div class="eight wide column">
+              <h1 class="ui header">
+                Gallery
+              </h1><div class="ui horizontal divider"><i class="flaticon-settings icon"></i></div>
+                <p class="ui centered lead">
+                  Today's special moments. Tomorrows priceless treasures
+                </p>
+              <br/>
+            </div>
+          </div>
+      <div class="four column gallery row">
+        {% for image in gallery %}
+        <div class="column">
+          <image class="ui image" src="{{image.image.url}}"/>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+
+  <!-- The team -->
+  <div class="ui vertical segment" id="team">
+    <div class="ui stackable center aligned page grid">
+      <div class="row">
+        <div class="eight wide column">
+          <h1 class="ui header">
+            Meet our team
+          </h1><div class="ui horizontal divider"><i class="flaticon-settings icon"></i></div>
+            <p class="ui centered lead">
+            Team work makes the dream work
+            </p>
+          <br/>
+        </div>
+      </div>
+      <div class="three column team row">
+        {% for member in team %}
+        <div class="column">
+          <image class="ui image avatar" src="{{member.mugshot.url}}"/><br>
+          <h4 class="ui header">{{member.name}}</h4>
+          <p>{{member.email}}</p>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+{%endblock%}

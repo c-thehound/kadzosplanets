@@ -10,6 +10,7 @@ urlpatterns = [
     path('martor/',include('martor.urls')),
     path('stories/',include('stories.urls')),
     path('blog/',include('blog.urls')),
-]+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+]
+# urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 # Add media URLS
-urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+# urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

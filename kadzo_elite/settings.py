@@ -204,7 +204,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 
 STATICFILES_STORAGE = 'kadzosplanets.storage_backends.StaticStorage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN,'static')
-DEFAULT_FILE_STORAGE = 'kadzosplanets.storage_backends.MediaStorage'
+DEFAULT_FILE_STORAGE = 'kadzo_elite.storage_backends.MediaStorage'
 
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR,'static')

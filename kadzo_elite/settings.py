@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -110,6 +111,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# EMail settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'kadzosplanets@gmail.com'
+EMAIL_HOST_PASSWORD = 'Mwalimu*45'
+
+
 # Global martor settings
 # Input: string boolean, `true/false`
 MARTOR_ENABLE_CONFIGS = {
@@ -196,7 +206,10 @@ STATICFILES_STORAGE = 'kadzosplanets.storage_backends.StaticStorage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN,'static')
 DEFAULT_FILE_STORAGE = 'kadzosplanets.storage_backends.MediaStorage'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+
+django_heroku.settings(locals())

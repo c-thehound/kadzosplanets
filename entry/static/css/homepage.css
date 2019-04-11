@@ -231,7 +231,22 @@ font-weight: 300;margin: 0;padding: 30px 0 0 0;font-size: 16pt;letter-spacing: 1
     height:10px;
     background-color:#503A63;
 }
-
+.links{
+    display: inline-block;
+    padding-left:100px;
+}
+.links a{
+    display: inline-block !important;
+}
+.logo.item{
+    width:100px;
+    height: 100px;
+    position: absolute !important;
+    top:5px;
+    background-image: url('images/logo.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
 .ui.menu .logo.item img{
     width:100px;
 }
@@ -367,6 +382,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
 /*--------------
     Contact
 ---------------*/
+.subscribe .ui.form{
+    margin: auto 35% !important;
+}
+
+/*--------------
+    Team
+---------------*/
 .ui.segment.gallery{
     width:100%;
     border-radius:0;
@@ -379,9 +401,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     max-width:200px;
     max-height:200px;
 }
-/*--------------
-    Team
----------------*/
 .ui.avatar.image{
     min-height:200px !important;
     min-width:200px !important;
@@ -424,7 +443,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     text-align:center;
     font-size:20px;
     font-weight:bold;
-    background-color:#503A63;
     color:#fff;
 }
 .storytitle{

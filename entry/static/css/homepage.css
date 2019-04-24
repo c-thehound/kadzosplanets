@@ -451,6 +451,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     font-size: 30px;
     padding: 10px
 }
+#stories .row .column{
+    margin-bottom: 20px !important;
+}
 .storycontent{
     font-weight:bold;
     font-family: 'Kalam', cursive;

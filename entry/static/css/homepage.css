@@ -458,13 +458,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     font-weight:bold;
     font-family: 'Kalam', cursive;
     font-size:20px !important;
-    max-height: 100vh !important;
+    min-height: 100vh !important;
+    height:auto;
 }
 .ui.basic.modal{
     max-height: 100vh;
     padding-bottom: 100px !important;
 }
-.scrolling.dimmable.dimmed>.dimmer{
+.ui.page.dimmer{
     overflow:scroll !important;
 }
 /*******************************

@@ -10,10 +10,6 @@ html {
 /*******************************
             Global
 *******************************/
-#home .ui.modal{
-    top:100px !important;
-    margin-top:100px !important;
-}
 #home{
     scroll-behavior: smooth;
 }
@@ -462,6 +458,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     height:auto;
 }
 .ui.basic.modal{
+    z-index: 9999;
     max-height: 100vh;
     padding-bottom: 100px !important;
 }

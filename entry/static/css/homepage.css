@@ -458,6 +458,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     min-height: 100vh !important;
     height:auto;
 }
+.header {
+    color: #212121 !important;
+    font-family: 'Cinzel' !important;
+}
 .ui.basic.modal{
     max-height: 100vh;
     padding-bottom: 100px !important;

@@ -449,7 +449,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     font-weight:bold;
     text-transform: uppercase !important;
     text-decoration: underline;
-    background-color:#BE3353;
+    background-color:#BE3353 !important;
     font-family: 'Kalam',sans-serif !important;
     font-size: 30px;
     padding: 10px
@@ -458,9 +458,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     font-weight:bold;
     font-family: 'Kalam', cursive;
     font-size:20px !important;
+    overflow: scroll;
 }
 .ui.basic.modal{
-    overflow: scroll;
     max-height: 100vh;
     padding-bottom: 50px;
 }

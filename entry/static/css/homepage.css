@@ -447,16 +447,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
 }
 .storytitle{
     font-weight:bold;
-    font-family:'Cinzel',sans-serif;
     text-transform: uppercase !important;
     text-decoration: underline;
+    background-color:#BE3353;
+    font-family: 'Kalam',sans-serif !important;
+    font-size: 30px;
+    padding: 10px
 }
 .storycontent{
     font-weight:bold;
     font-family: 'Kalam', cursive;
-    font-size:20px;
+    font-size:20px !important;
 }
-
+.ui.basic.modal{
+    overflow: scroll;
+    max-height: 100vh;
+    padding-bottom: 50px;
+}
 /*******************************
           Responsive
 *******************************/

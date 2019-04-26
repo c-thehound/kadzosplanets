@@ -461,6 +461,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     min-height: 100vh !important;
     height:auto;
 }
+.credits p,.credits a{
+    opacity:.2 !important;
+}
 .header {
     color: #212121 !important;
     font-family: 'Cinzel' !important;

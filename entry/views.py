@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import TeamMember,WeeksTheme,KadzosTagline,Logo
+from django.shortcuts import render,redirect
+from .models import TeamMember,WeeksTheme,KadzosTagline,Logo,Message
 from gallery.models import Image
 from shop.models import Product
 from stories.models import Story
@@ -51,3 +51,19 @@ def blog(request):
           "logo":logo,
           "active":active
      })
+
+def message(request):
+     email = request.data.get('email')
+     message = request.data.get('message')
+
+     try:
+          mes = Message.objects.create(
+               email = email,
+               message = message
+          )
+          mes.save()
+          return redirect('/',success="Successfully added you to our mailing list")
+     except:
+          return redirect('/',error="Could not add you to our mailing list")
+     return redirect('/')
+

@@ -40,25 +40,24 @@
 
     <!-- Subscribe to our mailing list -->
        <div class="ui centered page grid" id="contact" style="text-align:center;">
-        <div class="row">
-              <p><h3 class="subscribe-header">Subscribe to our Mailing List</h3></p>
+            <div class="row">
+              <p><h3 class="subscribe-header">Feel free to leave us a message</h3></p>
             </div>
             <div class="row">
-              <p class="ui centered lead large">Don't miss a out on anything</p><br><br>
+              <p class="ui centered lead large">Enter your email address and message below</p><br><br>
             </div>
-            <div class="row centered">
-              <div class="ui form subscribe column">
-              <div class="field">
-              <div class="ui fluid action input">
-                <form action="/mail/subscribe/" method="POST" style="text-align: center;">
-                  {%csrf_token%}
-              <input style="min-width:300px;margin-bottom:10px;" placeholder="Susbcribe..." name="email" type="email">
-              <button type="submit" class="ui primary button" style="margin:auto;">Subscribe</button>
-              </form>
-          </div>
-      </div>
-      </div>
-      </div>
+            <div class="row">
+              <div class="ui grid">
+                <div class="ui form">
+                  <form class="ui form" method="post" action="/contact/message/">
+                    {%csrf_token%}
+                    <input type="text" name="email" style="margin-bottom: 10px;" placeholder="Email address"/>
+                    <textarea style="margin-bottom: 10px;" type="text" name="message" placeholder="Message"></textarea>
+                    <button class="ui primary button fluid">SEND</button>
+                  </form>
+                </div>
+              </div>
+            </div>
     </div>       
 </div>
     

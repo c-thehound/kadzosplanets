@@ -31,3 +31,10 @@ class Logo(models.Model):
 
     def __str__(self):
         return str(self.pk)
+
+class Message(models.Model):
+    email = models.EmailField(blank=False, null=False)
+    message = models.TextField(blank=False, null=False)
+
+    def __str__(self):
+        return self.email

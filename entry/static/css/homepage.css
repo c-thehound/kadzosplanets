@@ -461,7 +461,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     min-height: 100vh !important;
     height:auto;
 }
-.credits p,.credits a{
+.credits,.credits p,.credits a{
     opacity:.2 !important;
 }
 .header {

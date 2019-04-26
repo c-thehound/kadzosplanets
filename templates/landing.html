@@ -10,7 +10,9 @@
         <div class="column">
         <div class="{{story.pk}} ui card storycard link">
           <div class="{{story.pk}} image">
+            {%if story.illustration %}
             <image class="{{story.pk}} illustration" src="{{story.illustration.url}}"/>
+            {%endif%}
           </div>
           <div class="{{story.pk}} extra content" style="text-align:center;font-family:'Courgette';">
             {{story.title}}

@@ -37,4 +37,4 @@ class Message(models.Model):
     message = models.TextField(blank=False, null=False)
 
     def __str__(self):
-        return self.email
+        return self.email+" says "+self.message

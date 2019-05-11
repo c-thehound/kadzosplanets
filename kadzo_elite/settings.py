@@ -190,7 +190,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR,'static')
 ]
 
 
@@ -212,4 +212,4 @@ DEFAULT_FILE_STORAGE = 'kadzo_elite.storage_backends.MediaStorage'
 # MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
-django_heroku.settings(locals())
+django_heroku.settings(locals(),staticfiles=False)

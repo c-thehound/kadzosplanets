@@ -12,6 +12,7 @@ html {
 *******************************/
 #home{
     scroll-behavior: smooth;
+    max-width:100vw !important;
 }
 
 #home .menu .right.menu > .mobile.item {

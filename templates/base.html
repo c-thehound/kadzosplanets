@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Kadzo's planets official site with all the stories and other services offered by the company"/>
+    <meta property="og:title" content="Kadzos planets"/>
+    <meta property="og:url" content="http://www.kadzosplanets.com"/>
+    <meta property="og:description" content="Kadzo's planets official site with all the stories and other services offered by the company"/>
+    <meta property="og:image" content="{% static "css/images/logo.png"%}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
     <link ref="shortcut icon" type="image/png" href="{% static "css/images/logo.png"%}"/>
     <link rel="stylesheet" type="text/css" href="{% static "css/semantic-ui/semantic.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/animate/animate.css" %}">
@@ -135,7 +142,7 @@
               <div class="column">
                 <h5 class="ui inverted header">Navigation</h5>
                 <div class="ui inverted link list">
-                  <a class="item" href="#landing">Back to top</a>
+                  <a class="item" href="#stories">Back to top</a>
                   <a class="item" href="#stories">Stories</a>
                   <a class="item" href="#shop">Shop</a>
                   <a class="item" href="#gallery">Gallery</a>
@@ -214,6 +221,11 @@
 
     // Handle toggling of the menu on small screens
     $('i.icon.bars').on('click',function(){
+      $('.collapsible').toggleClass('open')
+    })
+
+    // Close menu when link is clicked
+    $('.collapsible a.item').on('click',function(){
       $('.collapsible').toggleClass('open')
     })
 

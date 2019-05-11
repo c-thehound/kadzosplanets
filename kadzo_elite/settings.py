@@ -202,7 +202,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl':'max-age=86400'
 }
 
-STATICFILES_STORAGE = 'kadzosplanets.storage_backends.StaticStorage'
+STATICFILES_STORAGE = 'kadzo_elite.storage_backends.StaticStorage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN,'static')
 DEFAULT_FILE_STORAGE = 'kadzo_elite.storage_backends.MediaStorage'
 

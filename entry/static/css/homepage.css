@@ -480,6 +480,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     min-height: 100vh;
     padding-bottom: 100px !important;
     z-index: 9999;
+    overflow:hidden !important;
+}
+.ui.dimmer.modals{
+    overflow-y: scroll !important;
 }
 /*******************************
           Responsive

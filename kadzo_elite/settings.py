@@ -212,4 +212,4 @@ DEFAULT_FILE_STORAGE = 'kadzo_elite.storage_backends.MediaStorage'
 # MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
-django_heroku.settings(locals())
+django_heroku.settings(locals(),staticfiles=False)

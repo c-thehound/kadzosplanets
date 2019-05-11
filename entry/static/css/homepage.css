@@ -468,6 +468,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     font-family: 'Kalam', cursive;
     font-size:20px !important;
     height:auto;
+    overflow: hidden;
 }
 .credits,.credits p,.credits a{
     opacity:.5 !important;
@@ -477,8 +478,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', end
     font-family: 'Cinzel' !important;
 }
 .ui.basic.modal{
+    overflow-y: scroll;
     min-height: 100vh;
     padding-bottom: 100px !important;
+}
+.ui.dimmer{
+    position: fixed !important;
 }
 /*******************************
           Responsive

@@ -274,26 +274,11 @@
     })
 
     // Handle form validation
-    $( ".ui.form" ).form({
-    fields: {
-        email: {
-            identifier : "email",
-            rules: [{
-                type : "empty"
-            }]
-        },
-        message: {
-            identifier : "message",
-            rules: [{
-                type : "empty"
-            }]
-        }
-    },
-    onSuccess: function() {
-        console.log( "success" );
-        }
-        }).submit( function( e ) {
-      e.preventDefault();
+    $('.ui.form').form({
+      fields:{
+        email:'empty',
+        message:'empty'
+      }
     });
 
     // Add smoothscrolling

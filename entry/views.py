@@ -67,3 +67,5 @@ def message(request):
           return redirect('/',error="Could not add you to our mailing list")
      return redirect('/')
 
+def acme_challenge(request):
+    return HttpResponse(settings.ACME_CHALLENGE_CONTENT)

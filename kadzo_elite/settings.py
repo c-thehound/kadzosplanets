@@ -192,7 +192,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+        os.path.join(BASE_DIR,'entry/static'),
+   os.path.join(BASE_DIR,'static'),
+   os.path.join(BASE_DIR,'staticfiles'),
 ]
 
 
@@ -208,10 +210,10 @@ STATICFILES_STORAGE = 'kadzo_elite.storage_backends.StaticStorage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN,'static')
 DEFAULT_FILE_STORAGE = 'kadzo_elite.storage_backends.MediaStorage'
 
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR,'static')
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
 django_heroku.settings(locals(),staticfiles=False)

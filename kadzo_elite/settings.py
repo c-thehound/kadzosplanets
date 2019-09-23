@@ -61,7 +61,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'kadzo_elite.urls'
 
-ACME_CHALLENGE_CONTENT = os.environ['ACME_CHALLENGE_CONTENT']
+#ACME_CHALLENGE_CONTENT = os.environ['ACME_CHALLENGE_CONTENT']
 
 TEMPLATES = [
     {
@@ -131,6 +131,11 @@ MARTOR_ENABLE_CONFIGS = {
     'living': 'false',   # to enable/disable live updates in preview
 }
 
+#Upload to locale storage
+import time
+MARTOR_UPLOAD_PATH = '/martor/images/uploads/{}'.format(time.strftime("%Y/%m/%d"))
+MARTOR_UPLOAD_URL = '/api/uploader/' #Change to local uploader
+MAX_IMAGE_UPLOAD_SIZE = 5242880
 # To setup the martor editor with label or not (default is False)
 MARTOR_ENABLE_LABEL = False
 
@@ -193,8 +198,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR,'entry/static'),
-   os.path.join(BASE_DIR,'static'),
-   os.path.join(BASE_DIR,'staticfiles'),
+        os.path.join(BASE_DIR,'staticfiles'),
 ]
 
 

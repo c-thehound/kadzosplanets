@@ -133,8 +133,6 @@ MARTOR_ENABLE_CONFIGS = {
 
 #Upload to locale storage
 import time
-MARTOR_UPLOAD_PATH = '/martor/images/uploads/{}'.format(time.strftime("%Y/%m/%d"))
-MARTOR_UPLOAD_URL = '/api/uploader/' #Change to local uploader
 MAX_IMAGE_UPLOAD_SIZE = 5242880
 # To setup the martor editor with label or not (default is False)
 MARTOR_ENABLE_LABEL = False
@@ -169,7 +167,8 @@ MARTOR_MARKDOWN_EXTENSIONS = [
 MARTOR_MARKDOWN_EXTENSION_CONFIGS = {}
 
 # Markdown urls
-MARTOR_UPLOAD_URL = '/martor/uploader/' # default
+MARTOR_UPLOAD_URL = 'api/uploader/' # default
+MARTOR_UPLOAD_PATH = '/martor/images/uploads/{}'.format(time.strftime("%Y/%m/%d"))
 MARTOR_SEARCH_USERS_URL = '/martor/search-user/' # default
 
 # Markdown Extensions

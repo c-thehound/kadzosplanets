@@ -5,6 +5,9 @@ from shop.models import Product
 from stories.models import Story
 
 #Martor
+import json
+import uuid
+import os
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.http import HttpResponse

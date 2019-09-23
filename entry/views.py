@@ -95,7 +95,7 @@ def markdown_uploader(request):
                     },cls=LazyEncoder)
                 return HttpResponse(data,content_type='application/json')
     
-            if image._size > settings.MAX_IMAGE_UPLOAD_SIZE:
+            if image.size > settings.MAX_IMAGE_UPLOAD_SIZE:
                 to_MB = settings.MAX_IMAGE_UPLOAD_SIZE/(1024*1024)
                 data = json.dumps({
                     'status':405,

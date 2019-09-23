@@ -167,7 +167,7 @@ MARTOR_MARKDOWN_EXTENSIONS = [
 MARTOR_MARKDOWN_EXTENSION_CONFIGS = {}
 
 # Markdown urls
-MARTOR_UPLOAD_URL = 'api/uploader/' # default
+MARTOR_UPLOAD_URL = '/api/uploader/' # default
 MARTOR_UPLOAD_PATH = '/martor/images/uploads/{}'.format(time.strftime("%Y/%m/%d"))
 MARTOR_SEARCH_USERS_URL = '/martor/search-user/' # default
 

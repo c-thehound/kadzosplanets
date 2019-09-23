@@ -122,6 +122,37 @@ EMAIL_HOST_USER = 'kadzosplanets@gmail.com'
 EMAIL_HOST_PASSWORD = 'Mwalimu*45'
 
 
+# Internationalization
+# https://docs.djangoproject.com/en/2.2/topics/i18n/
+
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/2.2/howto/static-files/
+
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR,'entry/static'),
+        os.path.join(BASE_DIR,'staticfiles'),
+]
+
+
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl':'max-age=86400'
+}
+
 # Global martor settings
 # Input: string boolean, `true/false`
 MARTOR_ENABLE_CONFIGS = {
@@ -168,7 +199,7 @@ MARTOR_MARKDOWN_EXTENSION_CONFIGS = {}
 
 # Markdown urls
 MARTOR_UPLOAD_URL = '/api/uploader/' # default
-MARTOR_UPLOAD_PATH = '/martor/images/uploads/{}'.format(time.strftime("%Y/%m/%d"))
+MARTOR_UPLOAD_PATH = 'https://{0}/{1}/martor-images/{2}'.format(AWS_S3_CUSTOM_DOMAIN,'media',time.strftime("%Y/%m/%d"))
 MARTOR_SEARCH_USERS_URL = '/martor/search-user/' # default
 
 # Markdown Extensions
@@ -176,38 +207,6 @@ MARTOR_SEARCH_USERS_URL = '/martor/search-user/' # default
 MARTOR_MARKDOWN_BASE_EMOJI_URL = 'https://github.githubassets.com/images/icons/emoji/'                  # default from github
 MARTOR_MARKDOWN_BASE_MENTION_URL = 'https://python.web.id/author/'                                      # please change this to your domain
 CSRF_COOKIE_HTTPONLY = False
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/2.2/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
-
-STATICFILES_DIRS = [
-        os.path.join(BASE_DIR,'entry/static'),
-        os.path.join(BASE_DIR,'staticfiles'),
-]
-
-
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl':'max-age=86400'
-}
 
 STATICFILES_STORAGE = 'kadzo_elite.storage_backends.StaticStorage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN,'static')

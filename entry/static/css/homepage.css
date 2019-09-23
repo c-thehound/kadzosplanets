@@ -602,6 +602,9 @@ h5.ui.inverted.header {
   #stories .card {
     width: 100%;
   }
+  .storycontent p img {
+    width: 100vw;
+  }
   .shopitem {
     width: 100% !important;
     height: 300px !important;

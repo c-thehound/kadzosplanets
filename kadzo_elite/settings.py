@@ -125,7 +125,7 @@ EMAIL_HOST_PASSWORD = 'Mwalimu*45'
 # Global martor settings
 # Input: string boolean, `true/false`
 MARTOR_ENABLE_CONFIGS = {
-    'imgur': 'true',     # to enable/disable imgur/custom uploader.
+    'imgur': 'false',     # to enable/disable imgur/custom uploader.
     'mention': 'false',  # to enable/disable mention
     'jquery': 'true',    # to include/revoke jquery (require for admin default django)
     'living': 'false',   # to enable/disable live updates in preview

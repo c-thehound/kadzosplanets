@@ -214,7 +214,7 @@ DEFAULT_FILE_STORAGE = 'kadzo_elite.storage_backends.MediaStorage'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-MEDIA_URL = '{}'.format(AWS_S3_CUSTOM_DOMAIN)
+MEDIA_URL = 'https://{}/media'.format(AWS_S3_CUSTOM_DOMAIN)
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
